@@ -1,6 +1,6 @@
 <%- include('header'); -%>
     <div class="content">
-        <h1>Selected articles</h1>
+        <h1>Selected article</h1>
         <table id="catalog">
             <thead>
                 <tr>
@@ -11,7 +11,6 @@
                 </tr>
             </thead>
             <tbody>
-                <% products.forEach(product => { %>
                     <tr>
                         <th scope="row">
                             <%= product.name %>
@@ -28,9 +27,8 @@
                             <%= product.price %> AED
                         </td>
                     </tr>
-                    <% }) %>
             </tbody>
         </table>
     </div>
     <br>
-    <%- include('footer'); -%>
+    <%- include('footer'); -%></br>
