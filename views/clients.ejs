@@ -1,0 +1,68 @@
+<%- include('header'); -%>
+    <div class="content">
+        <h1>Selected articles</h1>
+        <table id="clients">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th scope="col">Society</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Zipcode</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Fax</th>
+                    <th scope="col">Confirmation</th>
+                    <th scope="col">Payment</th>
+                    <th scope="col">Informations</th>
+                    <th scope="col">Max Outstanding</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% clients.forEach(client => { %>
+                    <tr>
+                        <th scope="row">
+                            <a href="/api/client/<%= client.num_client %>">
+                                <%= client.num_client %>
+                            </a>
+                        </th>
+                        <td>
+                            <%= client.society %>
+                        </td>
+                        <td>
+                            <%= client.contact %>
+                        </td>
+                        <td>
+                            <%= client.addres %> 
+                        </td>
+                        <td>
+                            <%= client.zipcode %> 
+                        </td>
+                        <td>
+                            <%= client.city %> 
+                        </td>
+                        <td>
+                            <%= client.phone %> 
+                        </td>
+                        <td>
+                            <%= client.fax %> 
+                        </td>
+                        <td>
+                            <%= client.confirmation %> 
+                        </td>
+                        <td>
+                            <%= client.payment %> 
+                        </td>
+                        <td>
+                            <%= client.informations %> 
+                        </td>
+                        <td>
+                            <%= client.max_outstanding %> 
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <%- include('footer'); -%>

@@ -1,10 +1,12 @@
 const express = require('express');
 const router = require('./apis/routes.js');
+const session = require('express-session');
 //creating app
 const app = express();
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(session({secret: 'f28wp_lab_3'}));
 app.use(router); 
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
@@ -30,6 +32,18 @@ app.get('/api/register', function (req, res) {
 //route for login
 app.get('/api/login', function (req, res) {
     res.render('login');
+});
+app.get('/api/login_success', function (req, res) {
+    res.render('login_success');
+});
+app.get('/api/register_success', function (req, res) {
+    res.render('register_success');
+});
+app.get('/api/clients', function (req, res) {
+    res.render('clients');
+});
+app.get('/api/client', function (req, res) {
+    res.render('client');
 });
 //make the app listen on port
 const port = process.argv[2] || process.env.PORT || 3000;

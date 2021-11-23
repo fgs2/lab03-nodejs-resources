@@ -16,5 +16,7 @@ router.post('/api/register', clientController.registerControl);
 // route for login
 router.post('/api/login', clientController.loginControl);
 
+router.get('/api/clients', clientController.getClients);
+router.get('/api/client/:num_id', clientController.getClientByNumclient);
 //export router
 module.exports = router;

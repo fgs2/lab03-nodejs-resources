@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 
 //select all clients
 function find(callback) {
-    const selectClients = (`SELECT * FROM ACCOUNT;`);
+    const selectClients = (`SELECT * FROM client;`);
     //put your code her to select clients and return the array
     //....
     database.getResult(selectClients, function(err, rows) {
@@ -16,7 +16,7 @@ function find(callback) {
 }
 
 function findByUsername(username, callback) {
-    const selectClient = (`SELECT * from account where username like '${username}';`);
+    const selectClient = (`SELECT * from client where username like '${username}';`);
     database.getResult(selectClient, function(err, rows) {
         if (!err) {
             callback(null, rows);
@@ -27,7 +27,7 @@ function findByUsername(username, callback) {
 }
 
 function findBySociety(society, callback) {
-    const selectSociety = (`SELECT * from account where society like '${society}';`);
+    const selectSociety = (`SELECT * from client where society like '${society}';`);
     database.getResult(selectSociety, function(err, rows) {
         if (!err) {
             callback(null, rows);
@@ -38,7 +38,7 @@ function findBySociety(society, callback) {
 }
 
 function findByNumclient(num_client, callback) {
-    const selectNum = (`SELECT * from account where num_client like '${num_client}';`);
+    const selectNum = (`SELECT * from client where num_client like '${num_client}';`);
     database.getResult(selectNum, function(err, rows) {
         if (!err) {
             callback(null, rows);
@@ -49,7 +49,7 @@ function findByNumclient(num_client, callback) {
 }
 
 function deleteClient(client, callback) {
-    const deleteClientRow = (`DELETE from account where num_client like '${num_client}';`);
+    const deleteClientRow = (`DELETE from client where num_client like '${num_client}';`);
     database.getResult(deleteClientRow, function(err, rows) {
         if (!err) {
             callback(null, rows);

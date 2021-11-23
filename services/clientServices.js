@@ -73,12 +73,34 @@ const registerService = (client, callback) => {
     });
 };
 
-const searchService = function(callback) { //to be completed
+const searchService = function(callback) { 
+    clientDAO.find(function(err, rows) {
+        if (err) {
+            throw err;
+        }
+        if (rows.length == 0) {
+            console.log("No clients!");
+        } else {
+            callback(null, rows);
+        }
+    });
 };
 
-const searchNumclientService = function(num_client, callback) {
-    //to be completed
-};
+const searchNumclientService = function(reference, callback) {
+    clientDAO.findByNumclient(reference, function(err, rows) {
+        if (err) {
+            throw err;
+        }
+        if (rows.length == 0) {
+            console.log("Unknown client!");
+            let client = null;
+            callback(null, client);
+        } else {
+            //return the retrieved client 
+            callback(null, clients[0]);
+        }
+    }
+    )};
 
 const deleteService = function(num_client, callback) {
     //to be completed
