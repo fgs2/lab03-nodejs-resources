@@ -3,10 +3,16 @@ const bcrypt = require("bcryptjs");
 
 //select all clients
 function find(callback) {
-    var rows = null;
+    const selectClients = (`SELECT * FROM ACCOUNT;`);
     //put your code her to select clients and return the array
     //....
-    callback(null, rows);
+    database.getResult(selectClients, function(err, rows) {
+        if (!err) {
+            callback(null, rows);
+        } else {
+            console.log(err);
+        }
+    });
 }
 
 function findByUsername(username, callback) {
@@ -18,6 +24,36 @@ function findByUsername(username, callback) {
             console.log(err);
         }
     });
+}
+
+function findBySociety(society, callback) {
+    const selectSociety = (`SELECT * from account where society like '${society}';`);
+    database.getResult(selectSociety, function(err, rows) {
+        if (!err) {
+            callback(null, rows);
+        } else {
+            console.log(err);
+        }
+    });
+}
+
+function findByNumclient(num_client, callback) {
+    const selectNum = (`SELECT * from account where num_client like '${num_client}';`);
+    database.getResult(selectNum, function(err, rows) {
+        if (!err) {
+            callback(null, rows);
+        } else {
+            console.log(err);
+        }
+    });
+}
+
+function deleteClient(client, callback) {
+
+}
+
+function createInitialAccounts() {
+
 }
 
 function cryptPassword(pass, callback) {

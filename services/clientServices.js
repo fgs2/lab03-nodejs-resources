@@ -1,5 +1,5 @@
 const { Client } = require('../models/entities');
-const clientDAO = require('../daos/clientDAO');
+const clientDAO = require('../db/clientDAO');
 const bcrypt = require("bcryptjs");
 
 const loginService = (typedUsername, typedPassword, callback) => {
@@ -89,5 +89,5 @@ module.exports = {
     registerService,
     searchNumclientService,
     searchService,
-    deleteService
+    deleteService,
 };

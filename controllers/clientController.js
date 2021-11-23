@@ -14,7 +14,7 @@ const loginControl = (request, response) => {
             clientServices.loginService(username, password, function(err, dberr, client) {
                 console.log("Client from login service :" + JSON.stringify(client));
                 if (client === null) {
-                    console.log("Auhtentication problem!");
+                    console.log("Authentication problem!");
                     response.send('login failed'); //invite to register
                     response.end();
                 } else {
@@ -34,18 +34,19 @@ const loginControl = (request, response) => {
 
 const registerControl = (request, response) => {
     const clientServices = require('../services/clientServices');
+    const clientCreate = require('../models/entities');
 
     let username = request.body.username;
-    let password = request.body.passwsord;
+    let password = request.body.password;
     let society = request.body.society;
     let contact = request.body.contact;
-    let addres = request.body.addres;
+    let addres = request.body.address;
     let zipcode = request.body.zipcode;
     let city = request.body.city;
     let phone = request.body.phone;
     let fax = request.body.fax;
     let max_outstanding = request.body.max_outstanding;
-    let client = new Client(username, password, 0, society, contact, addres, zipcode, city, phone, fax, max_outstanding);
+    let client = new clientCreate.Client (username, password, 0, society, contact, addres, zipcode, city, phone, fax, 0);
 
     clientServices.registerService(client, function(err, exists, insertedID) {
         console.log("User from register service :" + insertedID);

@@ -2,10 +2,14 @@
 <div class='content'>
     <H1 ID="welcome">WELCOME to the Sign Up page</H1>
     <form action="/api/register" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br>
+        <label for="username">Name:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
         <label for="society">Society:</label><br>
         <input type="text" id="society" name="society"><br>
+        <label for="contact">Contact:</label><br>
+        <input type="text" id="contact" name="contact"><br>
         <label for="address">Address:</label><br>
         <input type="text" id="address" name="address"><br>
         <label for="zipcode">Zipcode:</label><br>
@@ -13,9 +17,11 @@
         <label for="city">City:</label><br>
         <input type="text" id="city" name="city"><br>
         <label for="phone">Phone:</label><br>
-        <input type="text" id="phone" name="phone"><br>
+        <input type="number" id="phone" name="phone"><br>
         <label for="fax">Fax:</label><br>
-        <input type="text" id="fax" name="fax"><br><br>
+        <input type="number" id="fax" name="fax"><br><br>
+        <label for="max_outstanding">Max Outstanding:</label><br>
+        <input type="number" id="max_outstanding" name="max_outstanding"><br><br>
         <input type="submit" value="Submit">
     </form>
 </div>
