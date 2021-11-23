@@ -49,7 +49,14 @@ function findByNumclient(num_client, callback) {
 }
 
 function deleteClient(client, callback) {
-
+    const deleteClientRow = (`DELETE from account where num_client like '${num_client}';`);
+    database.getResult(deleteClientRow, function(err, rows) {
+        if (!err) {
+            callback(null, rows);
+        } else {
+            console.log(err);
+        }
+    });
 }
 
 function createInitialAccounts() {

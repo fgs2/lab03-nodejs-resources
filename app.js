@@ -31,9 +31,6 @@ app.get('/api/register', function (req, res) {
 app.get('/api/login', function (req, res) {
     res.render('login');
 });
-app.post('api/register', function (req, res) {
-    console.log(req.body);
-});
 //make the app listen on port
 const port = process.argv[2] || process.env.PORT || 3000;
 const server = app.listen(port, () => {

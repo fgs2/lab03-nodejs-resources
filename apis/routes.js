@@ -14,7 +14,7 @@ router.get('/api/article/:id', productController.getProductByID);
 // route for registration
 router.post('/api/register', clientController.registerControl);
 // route for login
-router.get('/api/login', clientController.loginControl);
+router.post('/api/login', clientController.loginControl);
 
 //export router
 module.exports = router;
