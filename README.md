@@ -1,5 +1,7 @@
+# F28WP: Web Programming - Marked Lab 3
+
 # Resources
-These are resources you should use for lab 3 on Node.js.
+These are resources used for lab 3 on Node.js.
 
 # Content
 **sales.sql**: is the database dump. You should import this file into your database server to create the database with all tables and their content
