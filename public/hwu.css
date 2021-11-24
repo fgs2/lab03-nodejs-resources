@@ -95,6 +95,30 @@ a.lien:active {
     background-color: rgb(240, 235, 191);
 }
 
+#clients thead th {
+    background-color: #69c;
+}
+
+#clients tr:nth-child(even) {
+    background-color: rgb(176, 176, 243);
+}
+
+#clients tr:nth-child(odd) {
+    background-color: rgb(240, 235, 191);
+}
+
+#client thead th {
+    background-color: #69c;
+}
+
+#client tr:nth-child(even) {
+    background-color: rgb(176, 176, 243);
+}
+
+#client tr:nth-child(odd) {
+    background-color: rgb(240, 235, 191);
+}
+
 #foot {
     background-color: rgb(233, 232, 232);
     text-align: center;

@@ -1,7 +1,59 @@
-<%- include('header'); -%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <title>Webstore</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="/hwu.css" title="HWU">
+    <link rel="shortcut icon" href="hwu.png">
+    <meta http-equiv="pragma" content="no-cache" />
+</head>
+
+<body>
+    <div class="banner">
+        <div class="logo">
+            <a href='http://www.hw.ac.uk' target="top">
+                <img src="/hwu.png" width="64" height="64" alt="Logo HWU" />
+            </a>
+        </div>
+
+        <div class="title">
+            <H1>WEBSTORE</H1>
+        </div>
+    </div>
+
+    <div class="menu">
+        <table class='tmenu'>
+            <thead>
+                <th id='th'> </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="/">Home</a></td>
+                    <td>
+                        <a href="/api/catalogue">Catalog</a></td>
+                    <td>
+                        <a href="/api/clients">Clients</a></td>
+                    <td>
+                        <a href="/api/contacts">Contacts</a></td>
+
+                    <td>
+                        <a href="controller.php?action=6">Cart</a>
+                    </td>
+                    <td>
+                        <a href="/api/login">Login</a>
+                    </td>
+                    <td>
+                        <a href="/api/register">Register</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="content">
         <h1>Selected client</h1>
-        <table id="clients">
+        <table id="client">
             <thead>
                 <tr>
                     <th>Number</th>
@@ -19,48 +71,55 @@
                 </tr>
             </thead>
             <tbody>
-                    <tr>
-                        <th scope="row">
-                            <a href="/api/client/<%= client.num_client %>">
-                                <%= client.num_client %>
-                            </a>
-                        </th>
-                        <td>
-                            <%= client.society %>
-                        </td>
-                        <td>
-                            <%= client.contact %>
-                        </td>
-                        <td>
-                            <%= client.addres %> 
-                        </td>
-                        <td>
-                            <%= client.zipcode %> 
-                        </td>
-                        <td>
-                            <%= client.city %> 
-                        </td>
-                        <td>
-                            <%= client.phone %> 
-                        </td>
-                        <td>
-                            <%= client.fax %> 
-                        </td>
-                        <td>
-                            <%= client.confirmation %> 
-                        </td>
-                        <td>
-                            <%= client.payment %> 
-                        </td>
-                        <td>
-                            <%= client.informations %> 
-                        </td>
-                        <td>
-                            <%= client.max_outstanding %> 
-                        </td>
-                    </tr>
+                <tr>
+                    <th scope="row">
+                        <a href="/api/client/<%= client.num_client %>">
+                            <%= client.num_client %>
+                        </a>
+                    </th>
+                    <td>
+                        <%= client.society %>
+                    </td>
+                    <td>
+                        <%= client.contact %>
+                    </td>
+                    <td>
+                        <%= client.addres %> 
+                    </td>
+                    <td>
+                        <%= client.zipcode %> 
+                    </td>
+                    <td>
+                        <%= client.city %> 
+                    </td>
+                    <td>
+                        <%= client.phone %> 
+                    </td>
+                    <td>
+                        <%= client.fax %> 
+                    </td>
+                    <td>
+                        <%= client.confirmation %> 
+                    </td>
+                    <td>
+                        <%= client.payment %> 
+                    </td>
+                    <td>
+                        <%= client.informations %> 
+                    </td>
+                    <td>
+                        <%= client.max_outstanding %> 
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
     <br>
-    <%- include('footer'); -%></br>
+    <br>
+    <div id="foot">
+        <p>Copyright &copy; (2021) - H W U</p>
+    </div>
+    </body>
+    
+    </html>
+    

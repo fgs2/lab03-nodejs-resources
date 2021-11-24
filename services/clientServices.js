@@ -91,13 +91,13 @@ const searchNumclientService = function(reference, callback) {
         if (err) {
             throw err;
         }
-        if (rows.length == 0) {
-            console.log("Unknown client!");
-            let client = null;
-            callback(null, client);
+        if (rows.length != 0) {
+            callback(null, rows[0]);
         } else {
-            //return the retrieved client 
-            callback(null, clients[0]);
+            console.log("Unknown client!");
+            let clie = null;
+            callback(null, clie);
+            
         }
     }
     )};
