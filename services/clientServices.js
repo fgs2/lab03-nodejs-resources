@@ -10,7 +10,7 @@ const loginService = (typedUsername, typedPassword, callback) => {
         }
         if (rows.length == 0) {
             //the user is not in the DB
-            console.log("Unkown client, Please click to register");
+            console.log("Unknown client, Please click to register");
             callback(null, false, null);
         } else {
             //check if password match...

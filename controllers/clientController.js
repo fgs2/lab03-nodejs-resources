@@ -27,7 +27,7 @@ const loginControl = (request, response) => {
             //add to session
             request.session.user = username;
             request.session.num_client = client[0].num_client;
-            request.session.admin = false;
+            request.session.admin = true;
             response.send(`<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
                     <html>
                     
@@ -209,10 +209,15 @@ const registerControl = (request, response) => {
 
 const getClients = (request, response) => {
   const clientServices = require("../services/clientServices");
-  clientServices.searchService(function (err, rows) {
-    response.render("clients", { clients: rows });
+  if (request.session && request.session.user) {
+    clientServices.searchService(function (err, rows) {
+        response.render("clients", { clients: rows });
+        response.end();
+      });
+  } else {
+    response.send("Access forbidden. Login as admin to access.");
     response.end();
-  });
+  }
 };
 
 const getClientByNumclient = (request, response) => {
